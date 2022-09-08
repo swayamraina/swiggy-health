@@ -1,0 +1,180 @@
+{
+    "items": [
+        {
+            "display_name": "Cranberry Almond Energy Bar",
+            "brand": "",
+            "variations": [
+                {
+                    "id": "JJZ9N9PVQS",
+                    "display_name": "Cranberry Almond Energy Bar",
+                    "listing_variant": true,
+                    "spin": null,
+                    "images": [
+                    ],
+                    "price": {
+                        "mrp": 100,
+                        "store_price": 100,
+                        "offer_price": 80,
+                        "offer_applied": {
+                            "offer_id": "bb0fdafb-346d-4739-a714-c2be583101de",
+                            "listing_description": "20% OFF",
+                            "product_description": "20% OFF",
+                            "super_offer": false
+                        }
+                    },
+                    "quantity": "200",
+                    "unit_of_measure": "gm",
+                    "inventory": {
+                        "in_stock": true,
+                        "total": 0,
+                        "remaining": 0,
+                        "message": null
+                    },
+                    "sku_slot_info": {
+                        "message": null,
+                        "avail": true,
+                        "is_avail": true,
+                        "next_change_time": null
+                    },
+                    "default": false
+                }
+            ],
+            "avail": true,
+            "in_stock": true,
+            "is_avail": true,
+            "product_id": "LTSBZCTY6E"
+        },
+        {
+            "display_name": "BBQ Beetroot chips",
+            "brand": "",
+            "variations": [
+                {
+                    "id": "JJZ9N9PVQS",
+                    "display_name": "BBQ Beetroot chips",
+                    "listing_variant": true,
+                    "spin": null,
+                    "images": [
+                    ],
+                    "price": {
+                        "mrp": 150,
+                        "store_price": 150,
+                        "offer_price": 70,
+                        "offer_applied": {
+                            "offer_id": "bb0fdafb-346d-4739-a714-c2be583101de",
+                            "listing_description": "20% OFF",
+                            "product_description": "20% OFF",
+                            "super_offer": false
+                        }
+                    },
+                    "quantity": "200",
+                    "unit_of_measure": "gm",
+                    "inventory": {
+                        "in_stock": true,
+                        "total": 0,
+                        "remaining": 0,
+                        "message": null
+                    },
+                    "sku_slot_info": {
+                        "message": null,
+                        "avail": true,
+                        "is_avail": true,
+                        "next_change_time": null
+                    },
+                    "default": false
+                }
+            ],
+            "avail": true,
+            "in_stock": true,
+            "is_avail": true,
+            "product_id": "LTSBZCTY6E"
+        },
+        {
+            "display_name": "Herbs Flax Crackers",
+            "brand": "",
+            "variations": [
+                {
+                    "id": "JJZ9N9PVQS",
+                    "display_name": "Herbs Flax Crackers",
+                    "listing_variant": true,
+                    "spin": null,
+                    "images": [
+                    ],
+                    "price": {
+                        "mrp": 50,
+                        "store_price": 50,
+                        "offer_price": 20,
+                        "offer_applied": {
+                            "offer_id": "bb0fdafb-346d-4739-a714-c2be583101de",
+                            "listing_description": "20% OFF",
+                            "product_description": "20% OFF",
+                            "super_offer": false
+                        }
+                    },
+                    "quantity": "100",
+                    "unit_of_measure": "gm",
+                    "inventory": {
+                        "in_stock": true,
+                        "total": 0,
+                        "remaining": 0,
+                        "message": null
+                    },
+                    "sku_slot_info": {
+                        "message": null,
+                        "avail": true,
+                        "is_avail": true,
+                        "next_change_time": null
+                    },
+                    "default": false
+                }
+            ],
+            "avail": true,
+            "in_stock": true,
+            "is_avail": true,
+            "product_id": "LTSBZCTY6E"
+        },
+        {
+            "display_name": "Apple oats",
+            "brand": "",
+            "variations": [
+                {
+                    "id": "JJZ9N9PVQS",
+                    "display_name": "Apple oats",
+                    "listing_variant": true,
+                    "spin": null,
+                    "images": [
+                    ],
+                    "price": {
+                        "mrp": 330,
+                        "store_price": 330,
+                        "offer_price": 200,
+                        "offer_applied": {
+                            "offer_id": "bb0fdafb-346d-4739-a714-c2be583101de",
+                            "listing_description": "20% OFF",
+                            "product_description": "20% OFF",
+                            "super_offer": false
+                        }
+                    },
+                    "quantity": "500",
+                    "unit_of_measure": "gm",
+                    "inventory": {
+                        "in_stock": true,
+                        "total": 0,
+                        "remaining": 0,
+                        "message": null
+                    },
+                    "sku_slot_info": {
+                        "message": null,
+                        "avail": true,
+                        "is_avail": true,
+                        "next_change_time": null
+                    },
+                    "default": false
+                }
+            ],
+            "avail": true,
+            "in_stock": true,
+            "is_avail": true,
+            "product_id": "LTSBZCTY6E"
+        }
+    ]
+}

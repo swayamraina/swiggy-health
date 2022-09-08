@@ -1,0 +1,427 @@
+{
+    "items": [
+        {
+            "display_name": "Cold pressed Pomegranate Juice(No Added Sugar)",
+            "brand": "",
+            "variations": [
+                {
+                    "id": "V949GKPD6Z",
+                    "display_name": "Cold pressed Pomegranate Juice(No Added Sugar)",
+                    "listing_variant": true,
+                    "spin": null,
+                    "images": [
+                        "xnoecb8eq6h0caj3igvb",
+                        "uiwzkxvqxn1vggqw05vp",
+                        "tf0at3ru6xaggp3izqlu"
+                    ],
+                    "price": {
+                        "mrp": 125,
+                        "store_price": 125,
+                        "offer_price": 100,
+                        "offer_applied": {
+                            "offer_id": "81b5bf19-2666-49ab-b69e-bdf38af79848",
+                            "listing_description": "20% OFF",
+                            "product_description": "20% OFF",
+                            "super_offer": false
+                        }
+                    },
+                    "quantity": "200",
+                    "unit_of_measure": "ml",
+                    "meta": {
+                        "short_description": "",
+                        "groups": []
+                    },
+                    "tags": null,
+                    "inventory": {
+                        "in_stock": true,
+                        "total": 0,
+                        "remaining": 0,
+                        "message": null
+                    },
+                    "max_allowed_quantity": 6,
+                    "cart_allowed_quantity": {
+                        "total": 1,
+                        "message": "That’s all we have in stock at the moment!"
+                    },
+                    "weight_in_grams": 200,
+                    "volumetric_weight": 0,
+                    "alcohol_content_percentage": 0,
+                    "container_type": "",
+                    "sub_category_type": "Pomegranate",
+                    "dimensions": {
+                        "length_in_cm": 400,
+                        "width_in_cm": 1,
+                        "height_in_cm": 1,
+                        "volume_in_cc": 400
+                    },
+                    "brand": "",
+                    "sku_slot_info": {
+                        "message": null,
+                        "avail": true,
+                        "is_avail": true,
+                        "next_change_time": null
+                    },
+                    "default": false,
+                    "product_name_without_brand": "Cold pressed Pomegranate Juice(No Added Sugar)"
+                }
+            ],
+            "avail": true,
+            "in_stock": true,
+            "is_avail": true,
+            "product_id": "2I8XBE98ZZ",
+            "product_name_without_brand": "Cold pressed Pomegranate Juice(No Added Sugar)"
+        },
+        {
+            "display_name": "Zespri Kiwi Green",
+            "brand": "",
+            "variations": [
+                {
+                    "id": "U8229PPNNZ",
+                    "display_name": "Zespri Kiwi Green",
+                    "listing_variant": true,
+                    "spin": null,
+                    "images": [
+                        "sr7ednaiznh1ya0md0hf",
+                        "tbuaho3gjcdfn97lfqvz",
+                        "lnsexgfzmttv002wu1hw",
+                        "nzb2apegcxahb38ncuu3",
+                        "ieeqoxemsrhqqzwgqor0",
+                        "mmjdbivdl2wvztvsgh3l"
+                    ],
+                    "price": {
+                        "mrp": 139,
+                        "store_price": 139,
+                        "offer_price": 111,
+                        "offer_applied": {
+                            "offer_id": "4cba6f7a-7345-494f-9fe3-269ef5d63103",
+                            "listing_description": "20% OFF",
+                            "product_description": "20% OFF",
+                            "super_offer": false
+                        }
+                    },
+                    "quantity": "3",
+                    "unit_of_measure": "pieces",
+                    "meta": {
+                        "short_description": "",
+                        "groups": []
+                    },
+                    "tags": null,
+                    "inventory": {
+                        "in_stock": true,
+                        "total": 0,
+                        "remaining": 0,
+                        "message": null
+                    },
+                    "max_allowed_quantity": 6,
+                    "cart_allowed_quantity": {
+                        "total": 5,
+                        "message": "That’s all we have in stock at the moment!"
+                    },
+                    "weight_in_grams": 30,
+                    "volumetric_weight": 0,
+                    "alcohol_content_percentage": 0,
+                    "container_type": "",
+                    "sub_category_type": "Kiwi",
+                    "dimensions": {
+                        "length_in_cm": 60,
+                        "width_in_cm": 1,
+                        "height_in_cm": 1,
+                        "volume_in_cc": 60
+                    },
+                    "brand": "",
+                    "sku_slot_info": {
+                        "message": null,
+                        "avail": true,
+                        "is_avail": true,
+                        "next_change_time": null
+                    },
+                    "default": false,
+                    "product_name_without_brand": "Zespri Kiwi Green"
+                }
+            ],
+            "avail": true,
+            "in_stock": true,
+            "is_avail": true,
+            "product_id": "MIH280WMEF",
+            "product_name_without_brand": "Zespri Kiwi Green"
+        },
+        {
+            "display_name": "Yelakki Banana (Baale Hannu)",
+            "brand": "",
+            "variations": [
+                {
+                    "id": "M8L1XPQWVB",
+                    "display_name": "Yelakki Banana (Baale Hannu)",
+                    "listing_variant": true,
+                    "spin": null,
+                    "images": [
+                        "ucduyhlqxdenguptsrfx",
+                        "ojtth2um0vjiu0dms69e",
+                        "hwbj8mzbdfuqmjfpiuh3"
+                    ],
+                    "price": {
+                        "mrp": 75,
+                        "store_price": 75,
+                        "offer_price": 60,
+                        "offer_applied": {
+                            "offer_id": "3bbcf854-0f70-436a-a3ff-21938bc1495a",
+                            "listing_description": "20% OFF",
+                            "product_description": "20% OFF",
+                            "super_offer": false
+                        }
+                    },
+                    "quantity": "500",
+                    "unit_of_measure": "g",
+                    "meta": {
+                        "short_description": "Approx: 7 to 10 Pieces",
+                        "groups": []
+                    },
+                    "tags": null,
+                    "inventory": {
+                        "in_stock": true,
+                        "total": 0,
+                        "remaining": 0,
+                        "message": null
+                    },
+                    "max_allowed_quantity": 6,
+                    "cart_allowed_quantity": {
+                        "total": 6,
+                        "message": "That’s all we have in stock at the moment!"
+                    },
+                    "weight_in_grams": 500,
+                    "volumetric_weight": 0,
+                    "alcohol_content_percentage": 0,
+                    "container_type": "",
+                    "sub_category_type": "Banana",
+                    "dimensions": {
+                        "length_in_cm": 22,
+                        "width_in_cm": 16,
+                        "height_in_cm": 16,
+                        "volume_in_cc": 1760
+                    },
+                    "brand": "",
+                    "sku_slot_info": {
+                        "message": null,
+                        "avail": true,
+                        "is_avail": true,
+                        "next_change_time": null
+                    },
+                    "default": false,
+                    "product_name_without_brand": "Yelakki Banana (Baale Hannu)"
+                }
+            ],
+            "avail": true,
+            "in_stock": true,
+            "is_avail": true,
+            "product_id": "WTIHCV9DKS",
+            "product_name_without_brand": "Yelakki Banana (Baale Hannu)"
+        },
+        {
+            "display_name": "Coconut Chunks (Naral)",
+            "brand": "",
+            "variations": [
+                {
+                    "id": "MU5RS75OGK",
+                    "display_name": "Coconut Chunks (Naral)",
+                    "listing_variant": true,
+                    "spin": null,
+                    "images": [
+                        "fusr4udxm50zy4snj6qb"
+                    ],
+                    "price": {
+                        "mrp": 45,
+                        "store_price": 45,
+                        "offer_price": 36,
+                        "offer_applied": {
+                            "offer_id": "06bc6744-ec19-4af5-a8eb-1e9f19a79f25",
+                            "listing_description": "20% OFF",
+                            "product_description": "20% OFF",
+                            "super_offer": false
+                        }
+                    },
+                    "quantity": "100",
+                    "unit_of_measure": "g",
+                    "meta": {
+                        "short_description": "",
+                        "groups": []
+                    },
+                    "tags": null,
+                    "inventory": {
+                        "in_stock": true,
+                        "total": 0,
+                        "remaining": 0,
+                        "message": null
+                    },
+                    "max_allowed_quantity": 5,
+                    "cart_allowed_quantity": {
+                        "total": 4,
+                        "message": "That’s all we have in stock at the moment!"
+                    },
+                    "weight_in_grams": 100,
+                    "volumetric_weight": 0,
+                    "alcohol_content_percentage": 0,
+                    "container_type": "",
+                    "sub_category_type": "Coconut",
+                    "dimensions": {
+                        "length_in_cm": 3,
+                        "width_in_cm": 10,
+                        "height_in_cm": 8,
+                        "volume_in_cc": 240
+                    },
+                    "brand": "",
+                    "sku_slot_info": {
+                        "message": null,
+                        "avail": true,
+                        "is_avail": true,
+                        "next_change_time": null
+                    },
+                    "default": false,
+                    "product_name_without_brand": "Coconut Chunks (Naral)"
+                }
+            ],
+            "avail": true,
+            "in_stock": true,
+            "is_avail": true,
+            "product_id": "8R4PQJVQGH",
+            "product_name_without_brand": "Coconut Chunks (Naral)"
+        },
+        {
+            "display_name": "Green Cucumber",
+            "brand": "",
+            "variations": [
+                {
+                    "id": "FMJO6N0AWK",
+                    "display_name": "Green Cucumber",
+                    "listing_variant": true,
+                    "spin": null,
+                    "images": [
+                        "ma3dm7utot4deozkrjmj"
+                    ],
+                    "price": {
+                        "mrp": 20,
+                        "store_price": 20,
+                        "offer_price": 16,
+                        "offer_applied": {
+                            "offer_id": "877c06e8-3017-413f-853f-51ac23485f18",
+                            "listing_description": "20% OFF",
+                            "product_description": "20% OFF",
+                            "super_offer": false
+                        }
+                    },
+                    "quantity": "2",
+                    "unit_of_measure": "pieces",
+                    "meta": {
+                        "short_description": "Approx Weight: 300g - 500g",
+                        "groups": []
+                    },
+                    "tags": null,
+                    "inventory": {
+                        "in_stock": true,
+                        "total": 0,
+                        "remaining": 0,
+                        "message": null
+                    },
+                    "max_allowed_quantity": 6,
+                    "cart_allowed_quantity": {
+                        "total": 6,
+                        "message": "Only 6 unit(s) of this item can be added per order."
+                    },
+                    "weight_in_grams": 20,
+                    "volumetric_weight": 0,
+                    "alcohol_content_percentage": 0,
+                    "container_type": "",
+                    "sub_category_type": "Cucumber",
+                    "dimensions": {
+                        "length_in_cm": 22,
+                        "width_in_cm": 18,
+                        "height_in_cm": 3,
+                        "volume_in_cc": 1188
+                    },
+                    "brand": "",
+                    "sku_slot_info": {
+                        "message": null,
+                        "avail": true,
+                        "is_avail": true,
+                        "next_change_time": null
+                    },
+                    "default": false,
+                    "product_name_without_brand": "Green Cucumber"
+                }
+            ],
+            "avail": true,
+            "in_stock": true,
+            "is_avail": true,
+            "product_id": "VEID9B3GPX",
+            "product_name_without_brand": "Green Cucumber"
+        },
+        {
+            "display_name": "Raw Papaya",
+            "brand": "",
+            "variations": [
+                {
+                    "id": "VJLASKDBRV",
+                    "display_name": "Raw Papaya",
+                    "listing_variant": true,
+                    "spin": null,
+                    "images": [
+                        "i1mjwjkjjuo9bw9kgvu1"
+                    ],
+                    "price": {
+                        "mrp": 38,
+                        "store_price": 38,
+                        "offer_price": 30,
+                        "offer_applied": {
+                            "offer_id": "8d14fe78-f0c4-4b77-b7d2-6c711c7108e9",
+                            "listing_description": "20% OFF",
+                            "product_description": "20% OFF",
+                            "super_offer": false
+                        }
+                    },
+                    "quantity": "1",
+                    "unit_of_measure": "piece",
+                    "meta": {
+                        "short_description": "Approx Weight (400 - 800 g)",
+                        "groups": []
+                    },
+                    "tags": null,
+                    "inventory": {
+                        "in_stock": true,
+                        "total": 0,
+                        "remaining": 0,
+                        "message": null
+                    },
+                    "max_allowed_quantity": 5,
+                    "cart_allowed_quantity": {
+                        "total": 5,
+                        "message": "Only 5 unit(s) of this item can be added per order."
+                    },
+                    "weight_in_grams": 10,
+                    "volumetric_weight": 0,
+                    "alcohol_content_percentage": 0,
+                    "container_type": "",
+                    "sub_category_type": "Papaya",
+                    "dimensions": {
+                        "length_in_cm": 20,
+                        "width_in_cm": 1,
+                        "height_in_cm": 1,
+                        "volume_in_cc": 20
+                    },
+                    "brand": "",
+                    "sku_slot_info": {
+                        "message": null,
+                        "avail": true,
+                        "is_avail": true,
+                        "next_change_time": null
+                    },
+                    "default": false,
+                    "product_name_without_brand": "Raw Papaya"
+                }
+            ],
+            "avail": true,
+            "in_stock": true,
+            "is_avail": true,
+            "product_id": "PTZ5LMRZJG",
+            "product_name_without_brand": "Raw Papaya"
+        }
+    ]
+}
