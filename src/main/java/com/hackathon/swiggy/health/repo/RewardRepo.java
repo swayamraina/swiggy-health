@@ -9,8 +9,8 @@ public class RewardRepo {
 
     private static List<Reward> emptyList = new ArrayList<>();
 
-    public Map<String, List<Reward>> userIdToLockedRewardMapping = new HashMap<>();
-    public Map<String, List<Reward>> userIdToUnlockedRewardMapping = new HashMap<>();
+    private Map<String, List<Reward>> userIdToLockedRewardMapping = new HashMap<>();
+    private Map<String, List<Reward>> userIdToUnlockedRewardMapping = new HashMap<>();
 
     public Pair<List<Reward>, List<Reward>> get(String userId) {
         List<Reward> locked = getLocked(userId);

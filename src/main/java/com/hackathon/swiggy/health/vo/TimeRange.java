@@ -12,4 +12,13 @@ public enum TimeRange {
         this.ID = i;
     }
 
+    public static TimeRange get(int i) {
+        switch (i) {
+            case 1: return TimeRange.TODAY;
+            case 2: return TimeRange.WEEK;
+            case 3: return TimeRange.MONTH;
+        }
+        return TimeRange.TODAY;
+    }
+
 }
