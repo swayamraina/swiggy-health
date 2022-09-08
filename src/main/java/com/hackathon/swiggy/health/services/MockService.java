@@ -1,4 +1,4 @@
-package com.hackathon.swiggy.health.utils;
+package com.hackathon.swiggy.health.services;
 
 import java.io.File;
 import java.io.IOException;
@@ -6,26 +6,20 @@ import java.net.URL;
 
 import com.hackathon.swiggy.health.vo.TimeSeries;
 import com.fasterxml.jackson.databind.*;
+import org.springframework.stereotype.Service;
 
-public class DataAccess {
+@Service
+public class MockService {
 
-    public static TimeSeries GetDataObject(String name) throws IOException {
-        URL url = DataAccess.class.getResource("../../../../../mockdata/" + name + ".json");
-        File file = new File(url.getPath());
-
-        TimeSeries t = null;
+    public TimeSeries getTimeSeriesDataFromMock(String name) throws IOException {
+        File file = getFileFromResources(name);
         ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            t = objectMapper.readValue(file, TimeSeries.class);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        return t;
-
+        return objectMapper.readValue(file, TimeSeries.class);
     }
 
-    public static void main(String args[]) throws IOException {
-        System.out.println(GetDataObject("googlefit"));
+    private File getFileFromResources(String name)  {
+        URL url = this.getClass().getResource("../../../../../mockdata/" + name + ".json");
+        return new File(url.getPath());
     }
 
 }

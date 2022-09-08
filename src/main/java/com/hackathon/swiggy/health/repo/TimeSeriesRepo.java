@@ -1,10 +1,14 @@
 package com.hackathon.swiggy.health.repo;
 
+import com.hackathon.swiggy.health.services.MockService;
 import com.hackathon.swiggy.health.vo.TimeRange;
 import com.hackathon.swiggy.health.vo.TimeSeries;
 import com.hackathon.swiggy.health.vo.timeseries.DayData;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -19,8 +23,13 @@ public class TimeSeriesRepo {
 
     Map<String, TimeSeries> userIdToTimeSeries = new HashMap<>();
 
-    public void init() {
+    @Autowired
+    private MockService mockService;
 
+    @PostConstruct
+    public void init() throws IOException {
+        TimeSeries timeSeries = mockService.getTimeSeriesDataFromMock("googlefit");
+        userIdToTimeSeries.put("1", timeSeries);
     }
 
 
