@@ -1,38 +1,238 @@
-plugins {
-    id 'org.springframework.boot' version '2.7.3'
-    id 'io.spring.dependency-management' version '1.0.13.RELEASE'
-    id 'java'
-}
-
-group = 'com.hackathon.swiggy'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '8'
-
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
+buildscript {
+    ext {
+        springBootVersion = '2.0.4.RELEASE'
+        springCloudVersion = 'Finchley.SR1'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.4.RELEASE")
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.3.RELEASE"
+        classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6.1'
     }
 }
 
+plugins {
+    id "org.sonarqube" version "2.6.1"
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'maven'
+apply plugin: "io.spring.dependency-management"
+apply plugin: 'jacoco'
+apply plugin: 'org.sonarqube'
+
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 repositories {
     mavenCentral()
+    /* Swiggy Commons */
+    maven {
+        credentials {
+            username "admin"
+            password "tQNeWoa4CzWJ7r6e"
+        }
+        url "http://shr-p-nexus-02-dash.swiggyops.de/nexus/repository/swiggy-commons-releases"
+    }
+
+    maven {
+        url "https://packages.confluent.io/maven/"
+    }
+
+    maven {
+        credentials {
+            username "admin"
+            password "tQNeWoa4CzWJ7r6e"
+        }
+        url "http://shr-p-nexus-02-dash.swiggyops.de/nexus/repository/oms-commons-releases"
+    }
+
+    maven {
+        url "http://shr-p-nexus-02-dash.swiggyops.de/nexus/repository" + '/paas-utils/releases'
+    }
+
+    /* Sand Commons */
+    maven {
+        credentials {
+            username "admin"
+            password "tQNeWoa4CzWJ7r6e"
+        }
+        url "http://shr-p-nexus-02-dash.swiggyops.de/nexus/repository/sand-commons-releases"
+    }
+
+    maven {
+        credentials {
+            username "admin"
+            password "tQNeWoa4CzWJ7r6e"
+        }
+        url "http://shr-p-nexus-02-dash.swiggyops.de/nexus/repository/test-framework"
+    }
+
+    maven {
+        url "https://repository.mulesoft.org/nexus/content/repositories/public/"
+    }
+
+    maven {
+        url "https://jitpack.io"
+    }
+}
+
+configurations {
+    providedRuntime
 }
 
 dependencies {
+    //implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 
+    /* Spring */
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework.boot:spring-boot-starter-validation'
-    compile 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix'
-    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
-    compile 'org.springframework.boot:spring-boot-starter-actuator'
+    compile('org.springframework.cloud:spring-cloud-starter-netflix-hystrix')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
     compile 'org.springframework.boot:spring-boot-configuration-processor'
 
-    compileOnly 'org.projectlombok:lombok'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    /* Redis */
+    compile 'org.springframework.boot:spring-boot-starter-data-redis'
+    //compile 'org.springframework.boot:spring-boot-starter-cache'
+    compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
+
+    /* Lombok */
+    compileOnly 'org.projectlombok:lombok:1.18.2'
+
+    compile 'io.sentry:sentry-logback:1.6.5'
+
+    /* Apache */
+    compile 'org.apache.commons:commons-lang3:3.9'
+
+    /* Spring retry */
+    compile 'org.springframework.retry:spring-retry'
+
+    //Swiggy Kafka Wrapper for Spring
+    compile (group: 'org.apache.kafka', name: 'kafka-clients', version: '7.0.1-ccs')
+    compile("com.swiggy.commons:kafka-client-java:1.9.5-701")
+
+    compile('com.swiggy.oms:base-oms-commons:2.0.0') {
+        exclude module: 'lombok'
+        exclude group: 'com.fasterxml.jackson.core'
+        exclude group: 'com.swiggy.cart'
+    }
+    compile('com.swiggy.dash.utils:dash-utils:0.4.4-RELEASE') {
+        exclude module: 'lombok'
+        exclude group: 'com.fasterxml.jackson.core'
+        exclude group: 'com.swiggy.cart'
+        exclude group: 'com.swiggy.oms'
+        exclude group: 'org.springframework.cloud'
+        exclude group: 'com.squareup.retrofit2'
+        exclude group: 'com.squareup.okhttp3'
+        exclude group: 'com.google.code.gson'
+        exclude group: 'com.swiggy.dash.nearby'
+    }
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.6.0'
+
+
+
+    /* mysql */
+    compile 'mysql:mysql-connector-java:8.0.12'
+    compile 'com.mchange:c3p0:0.9.5.2'
+
+    /* Swiggy */
+    compile 'com.swiggy.commons:swiggy-commons:0.0.1-RELEASE'
+    compile 'com.swiggy.sand.commons:caching-commons:2.0.2-RELEASE'
+    compile 'com.swiggy.sand.commons:api-commons:1.0.0-RELEASE'
+
+    compile("com.squareup.retrofit2:retrofit:2.0.1")
+    compile("com.squareup.retrofit2:converter-jackson:2.0.1")
+
+    compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.5')
+
+    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+
+    // swagger
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.8.0'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.8.0'
+
+    /* Test */
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.0.4.RELEASE'
+    testCompile(group: 'junit', name: 'junit', version: '4.12') {
+        exclude group: "log4j", module: "log4j"
+    }
 }
 
-tasks.named('test') {
-    useJUnitPlatform()
+jacoco {
+    toolVersion = "0.8.1"
+    reportsDir = file("${buildDir}/reports/jacoco")
 }
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        csv.enabled false
+        html.destination file("${buildDir}/reports/jacoco/jacocoHtml")
+        xml.destination file("${buildDir}/reports/jacoco/jacoco.xml")
+    }
+}
+
+sonarqube {
+    properties {
+        property "sonar.language", "java"
+        property "sonar.sourceEncoding", "UTF-8"
+    }
+}
+
+sourceSets {
+    integration {
+        java.srcDir "$projectDir/src/integration/java"
+        resources.srcDir "$projectDir/src/integration/resources"
+        compileClasspath += main.output + test.output
+        runtimeClasspath += main.output + test.output
+    }
+}
+
+configurations {
+    integrationImplementation.extendsFrom testCompile
+    integrationRuntime.extendsFrom testRuntime
+}
+
+task integrationTest(type: Test) {
+    testClassesDirs = sourceSets.integration.output.classesDirs
+    classpath = sourceSets.integration.runtimeClasspath
+    useJUnit()
+    jacoco {
+        append = false
+        destinationFile = file("${buildDir}/reports/jacoco/jacoco.exec")
+        classDumpDir = file("build/reports/jacoco/classpathdumps")
+    }
+    testLogging {
+        exceptionFormat "full"
+        events "passed", "skipped", "failed"
+    }
+
+}
+integrationTest.finalizedBy(project.tasks.jacocoTestReport)
+
+test {
+    jacoco {
+        append = false
+        destinationFile = file("${buildDir}/reports/jacoco/jacoco.exec")
+        classDumpDir = file("build/reports/jacoco/classpathdumps")
+    }
+    testLogging {
+        exceptionFormat "full"
+        events "passed", "skipped", "failed"
+    }
+
+}
+test.finalizedBy(project.tasks.jacocoTestReport)
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+build.dependsOn integrationTest
