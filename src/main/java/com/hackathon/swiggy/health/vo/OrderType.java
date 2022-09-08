@@ -2,13 +2,22 @@ package com.hackathon.swiggy.health.vo;
 
 public enum OrderType {
 
-    FOOD(1),
-    IM(2),
-    GUILT_FREE(3);
+    FOOD("food"),
+    IM("instamart"),
+    GUILT_FREE("guiltfree");
 
-    public int ID;
+    public String type;
 
-    OrderType(int i) {
-        this.ID = i;
+    OrderType(String i) {
+        this.type = type;
+    }
+
+    public static OrderType from (String in) {
+        switch (in) {
+            case "food": return OrderType.FOOD;
+            case "instamart": return OrderType.IM;
+            case "guiltfree": return OrderType.GUILT_FREE;
+        }
+        return OrderType.FOOD;
     }
 }

@@ -10,6 +10,8 @@ import java.util.*;
 @Component
 public class OrderRepo {
 
+    public static Object lock = new Object();
+
     Map<String, List<Order>> userIdToFoodOrdersMappings = new HashMap<>();
     Map<String, List<Order>> userIdToIMOrdersMappings = new HashMap<>();
     Map<String, List<Order>> userIdToGuiltFreeOrdersMappings = new HashMap<>();
@@ -20,6 +22,14 @@ public class OrderRepo {
     Map<String, List<Order>> userIdToNextOrderAdditionMapping=  new HashMap<>();
 
     public void create(String userId, Order order) {
+        // add freebies: order already in cart
+        List<Order> next = userIdToNextOrderAdditionMapping.get(userId);
+        if (!Objects.isNull(next)) {
+            next.forEach(x -> order.items.addAll(x.items));
+        }
+        // clear freebies
+        userIdToNextOrderAdditionMapping.remove(userId);
+
         // add to overall orders
         orderIdToOrderMapping.put(order.Id, order);
 
@@ -32,7 +42,11 @@ public class OrderRepo {
     }
 
     public String getID() {
-        return String.valueOf(System.currentTimeMillis());
+        String id;
+        synchronized (lock) {
+            id = String.valueOf(System.currentTimeMillis());
+        }
+        return id;
     }
 
     public Order get(String userId, String orderId) {
