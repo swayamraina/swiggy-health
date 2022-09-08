@@ -3,7 +3,6 @@ package com.hackathon.swiggy.health.repo;
 import com.hackathon.swiggy.health.services.MockService;
 import com.hackathon.swiggy.health.vo.TimeRange;
 import com.hackathon.swiggy.health.vo.TimeSeries;
-import com.hackathon.swiggy.health.vo.timeseries.DayData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

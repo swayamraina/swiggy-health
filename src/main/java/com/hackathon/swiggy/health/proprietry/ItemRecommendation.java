@@ -8,6 +8,7 @@ import javafx.util.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.List;
 
 @Service
@@ -23,6 +24,10 @@ public class ItemRecommendation {
         int score = userRepo.get(userId).score;
         Pair<List<Item>, List<Item>> pair = offersRepo.generateRecommendation(score);
         return new ItemRecommendationResponse(pair.getKey(), pair.getValue());
+    }
+
+    public void init() throws IOException {
+        offersRepo.init();
     }
 
 }

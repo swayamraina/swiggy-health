@@ -36,7 +36,7 @@ public class OrderController {
             @RequestBody ItemRequest itemRequest) {
 
         Order order = new Order();
-        order.items.add(new Item(itemRequest));
+        order.items.add(itemRequest);
         orderRepo.addToNextOrder(userId, order);
     }
 
