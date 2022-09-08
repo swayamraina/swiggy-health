@@ -12,9 +12,9 @@ public class OrderRepo {
 
     public static Object lock = new Object();
 
-    Map<String, List<Order>> userIdToFoodOrdersMappings = new HashMap<>();
+    public Map<String, List<Order>> userIdToFoodOrdersMappings = new HashMap<>();
     Map<String, List<Order>> userIdToIMOrdersMappings = new HashMap<>();
-    Map<String, List<Order>> userIdToGuiltFreeOrdersMappings = new HashMap<>();
+    public Map<String, List<Order>> userIdToGuiltFreeOrdersMappings = new HashMap<>();
 
     Map<String, Order> orderIdToOrderMapping=  new HashMap<>();
     Map<String, List<Order>> userIdToOrdersMappings = new HashMap<>();

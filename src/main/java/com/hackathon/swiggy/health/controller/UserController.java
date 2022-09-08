@@ -2,6 +2,7 @@ package com.hackathon.swiggy.health.controller;
 
 import com.hackathon.swiggy.health.controller.request.UserRequest;
 import com.hackathon.swiggy.health.controller.response.UserResponse;
+import com.hackathon.swiggy.health.proprietry.ScoreCalculator;
 import com.hackathon.swiggy.health.repo.UserRepo;
 import com.hackathon.swiggy.health.vo.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,9 @@ public class UserController {
 
     @Autowired
     private UserRepo userRepo;
+
+    @Autowired
+    private ScoreCalculator scoreCalculator;
 
     @PostMapping(value = "/api/user/create", consumes = "application/json")
     public String create(@RequestBody UserRequest request) {
@@ -24,6 +28,7 @@ public class UserController {
     @GetMapping("/api/user/{user-id}")
     public UserResponse get(@PathVariable("user-id") String userId) {
         User user = userRepo.get(userId);
+        user.score = scoreCalculator.getScore(userId);
         return new UserResponse(user);
     }
 
