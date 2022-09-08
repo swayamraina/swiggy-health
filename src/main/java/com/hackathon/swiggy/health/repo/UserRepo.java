@@ -2,11 +2,13 @@ package com.hackathon.swiggy.health.repo;
 
 import com.hackathon.swiggy.health.Errors;
 import com.hackathon.swiggy.health.vo.User;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+@Component
 public class UserRepo {
 
     Map<String, User> userIdToUserMapping = new HashMap<>();

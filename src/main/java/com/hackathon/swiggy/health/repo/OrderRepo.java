@@ -3,9 +3,11 @@ package com.hackathon.swiggy.health.repo;
 import com.hackathon.swiggy.health.Errors;
 import com.hackathon.swiggy.health.vo.Order;
 import com.hackathon.swiggy.health.vo.OrderType;
+import org.springframework.stereotype.Component;
 
 import java.util.*;
 
+@Component
 public class OrderRepo {
 
     Map<String, List<Order>> userIdToFoodOrdersMappings = new HashMap<>();

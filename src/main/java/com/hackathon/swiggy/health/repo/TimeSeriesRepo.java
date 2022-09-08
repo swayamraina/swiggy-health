@@ -3,6 +3,7 @@ package com.hackathon.swiggy.health.repo;
 import com.hackathon.swiggy.health.vo.TimeRange;
 import com.hackathon.swiggy.health.vo.TimeSeries;
 import com.hackathon.swiggy.health.vo.timeseries.DayData;
+import org.springframework.stereotype.Component;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -11,6 +12,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 public class TimeSeriesRepo {
 
     private static DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");

@@ -5,9 +5,13 @@ import com.hackathon.swiggy.health.controller.response.OrderResponse;
 import com.hackathon.swiggy.health.repo.OrderRepo;
 import com.hackathon.swiggy.health.vo.Item;
 import com.hackathon.swiggy.health.vo.Order;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 public class OrderController {
 
+    @Autowired
     private OrderRepo orderRepo;
 
     public void create() {

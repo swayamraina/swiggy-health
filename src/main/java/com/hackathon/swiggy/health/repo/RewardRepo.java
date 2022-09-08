@@ -2,9 +2,11 @@ package com.hackathon.swiggy.health.repo;
 
 import com.hackathon.swiggy.health.vo.Reward;
 import javafx.util.Pair;
+import org.springframework.stereotype.Component;
 
 import java.util.*;
 
+@Component
 public class RewardRepo {
 
     private static List<Reward> emptyList = new ArrayList<>();
