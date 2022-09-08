@@ -17,11 +17,11 @@ public class OrderRepo {
     Map<String, Order> orderIdToOrderMapping=  new HashMap<>();
     Map<String, List<Order>> userIdToOrdersMappings = new HashMap<>();
 
-    Map<String, List<Order>> orderIdToNextOrderAdditionMapping=  new HashMap<>();
+    Map<String, List<Order>> userIdToNextOrderAdditionMapping=  new HashMap<>();
 
     public void create(String userId, Order order) {
         // add to overall orders
-        orderIdToOrderMapping.put(order.ID, order);
+        orderIdToOrderMapping.put(order.Id, order);
 
         // add to user orders
         addToOrderMapping(userId, order, userIdToOrdersMappings);
@@ -31,16 +31,26 @@ public class OrderRepo {
         addToOrderMapping(userId, order, userIdToTypeXOrdersMapping);
     }
 
-    public Order get(String orderId) {
+    public String getID() {
+        return String.valueOf(System.currentTimeMillis());
+    }
+
+    public Order get(String userId, String orderId) {
         Order order = orderIdToOrderMapping.get(orderId);
         if (Objects.isNull(order)) {
-            throw new Errors.OrderNotFound("order" + orderId + "not found");
+            List<Order> next = userIdToNextOrderAdditionMapping.get(userId);
+            Optional<Order> found = next.stream().filter(x -> x.Id.equals(orderId)).findFirst();
+            if (found.isPresent()) {
+                throw new Errors.OrderNotFound("order " + orderId + " currently present in cart");
+            } else {
+                throw new Errors.OrderNotFound("order " + orderId + " not found");
+            }
         }
         return order;
     }
 
     public void addToNextOrder(String userId, Order order) {
-        addToOrderMapping(userId, order, orderIdToNextOrderAdditionMapping);
+        addToOrderMapping(userId, order, userIdToNextOrderAdditionMapping);
     }
 
 
