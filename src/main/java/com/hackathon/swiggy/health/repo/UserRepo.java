@@ -4,6 +4,7 @@ import com.hackathon.swiggy.health.Errors;
 import com.hackathon.swiggy.health.vo.User;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -11,22 +12,29 @@ import java.util.Objects;
 @Component
 public class UserRepo {
 
+    private static Integer counter = 0;
     Map<String, User> userIdToUserMapping = new HashMap<>();
 
-    public void create(String userId, User user) {
-        User existingUser = userIdToUserMapping.get(userId);
+    public void create(User user) {
+        User existingUser = userIdToUserMapping.get(user.Id);
         if (Objects.isNull(existingUser)) {
-            userIdToUserMapping.put(userId, user);
+            userIdToUserMapping.put(user.Id, user);
         }
-        throw new Errors.UserAlreadyExists("user" +  userId + "already exists");
     }
 
     public User get(String userId) {
         User existingUser = userIdToUserMapping.get(userId);
         if (Objects.isNull(existingUser)) {
-            throw new Errors.UserNotFound("user" +  userId + "not found");
+            throw new Errors.UserNotFound("user " +  userId + " not found");
         }
         return existingUser;
+    }
+
+    public String getID() {
+        synchronized (counter) {
+            counter++;
+        }
+        return String.valueOf(counter);
     }
 
 }
