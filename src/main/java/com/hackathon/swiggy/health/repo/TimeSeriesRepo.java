@@ -11,10 +11,7 @@ import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @Component
 public class TimeSeriesRepo {
@@ -28,15 +25,19 @@ public class TimeSeriesRepo {
 
     @PostConstruct
     public void init() throws IOException {
-        TimeSeries timeSeries = mockService.getTimeSeriesDataFromMock("googlefit");
+        TimeSeries timeSeries = mockService.getTimeSeriesDataFromMock("googlefit-daily");
         userIdToTimeSeries.put("1", timeSeries);
     }
 
 
     // day = yyyy-MM-dd
-    public void add(String userId, String day, DayData dayData) {
+    public void add(String userId, String day, Integer dayData) {
         TimeSeries userTimeSeries = userIdToTimeSeries.get(userId);
-        userTimeSeries.dayData.put(day, dayData);
+        Integer steps = userTimeSeries.dayData.get(day);
+        if (Objects.isNull(steps)) {
+            steps = 0;
+        }
+        userTimeSeries.dayData.put(day, steps+dayData);
     }
 
     public TimeSeries get(String userId, TimeRange range) {
@@ -53,35 +54,35 @@ public class TimeSeriesRepo {
         Date now = Calendar.getInstance().getTime();
         String key = dateFormat.format(now);
 
-        DayData dayData = timeSeries.dayData.get(key);
+        int steps = timeSeries.dayData.get(key);
         TimeSeries ts = new TimeSeries();
 
-        ts.dayData.put(key, dayData);
+        ts.dayData.put(key, steps);
         return ts;
     }
 
     public TimeSeries getLastSevenDays(TimeSeries timeSeries) {
-        final Calendar cal = Calendar.getInstance();
         TimeSeries ts = new TimeSeries();
-        for (int i=0; i<=7; i++) {
-            cal.add(Calendar.DATE, i);
+        for (int i=0; i<7; i++) {
+            final Calendar cal = Calendar.getInstance();
+            cal.add(Calendar.DATE, -i);
             Date date = cal.getTime();
             String key = dateFormat.format(date);
-            DayData dayData = timeSeries.dayData.get(key);
-            ts.dayData.put(key, dayData);
+            int steps = timeSeries.dayData.get(key);
+            ts.dayData.put(key, steps);
         }
         return ts;
     }
 
     public TimeSeries getLastThirtyDays(TimeSeries timeSeries) {
-        final Calendar cal = Calendar.getInstance();
         TimeSeries ts = new TimeSeries();
-        for (int i=0; i<=30; i++) {
-            cal.add(Calendar.DATE, i);
+        for (int i=0; i<30; i++) {
+            final Calendar cal = Calendar.getInstance();
+            cal.add(Calendar.DATE, -i);
             Date date = cal.getTime();
             String key = dateFormat.format(date);
-            DayData dayData = timeSeries.dayData.get(key);
-            ts.dayData.put(key, dayData);
+            int steps = timeSeries.dayData.get(key);
+            ts.dayData.put(key, steps);
         }
         return ts;
     }
