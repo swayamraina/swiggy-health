@@ -4,4 +4,6 @@ public class User {
 
     public String ID;
 
+    public int score;
+
 }
