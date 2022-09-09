@@ -30,7 +30,7 @@ public class ScoreCalculator {
         List<Order> foodOrders = orderRepo.userIdToFoodOrdersMappings.get(userId);
         int foodOrdersCount = foodOrders==null ? 0 : foodOrders.size();
 
-        List<Order> guiltfreeOrders = orderRepo.userIdToFoodOrdersMappings.get(userId);
+        List<Order> guiltfreeOrders = orderRepo.userIdToGuiltFreeOrdersMappings.get(userId);
         int guiltfreeOrdersCount = guiltfreeOrders==null ? 0 : guiltfreeOrders.size();
 
         return steps/500 - (foodOrdersCount - guiltfreeOrdersCount)*10;
