@@ -1,43 +1,49 @@
 package com.hackathon.swiggy.health.repo;
 
+import com.hackathon.swiggy.health.services.MockService;
 import com.hackathon.swiggy.health.vo.Reward;
+import com.hackathon.swiggy.health.vo.Rewards;
+import com.hackathon.swiggy.health.vo.User;
 import javafx.util.Pair;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.util.*;
 
 @Component
 public class RewardRepo {
 
-    private static List<Reward> emptyList = new ArrayList<>();
+    private static Reward lockedReward = new Reward("XXX");
 
-    private Map<String, List<Reward>> userIdToLockedRewardMapping = new HashMap<>();
-    private Map<String, List<Reward>> userIdToUnlockedRewardMapping = new HashMap<>();
+    private List<Reward> rewardMapping = new ArrayList<>();
+
+    @Autowired
+    private MockService mockService;
+
+    @Autowired
+    private UserRepo userRepo;
 
     public Pair<List<Reward>, List<Reward>> get(String userId) {
-        List<Reward> locked = getLocked(userId);
-        List<Reward> unlocked = getUnlocked(userId);
+        User user = userRepo.get(userId);
+        List<Reward> unlocked = getRewards(user.score);
+        List<Reward> locked = Arrays.asList(lockedReward,lockedReward,lockedReward,lockedReward);
         return new Pair<>(locked,  unlocked);
     }
 
-
-
-
-
-    private List<Reward> getLocked(String userId) {
-        return getXRewards(userId, userIdToLockedRewardMapping);
+    public void init() throws IOException {
+        Rewards rewards = mockService.getRewards();
+        rewardMapping.addAll(rewards.rewards);
     }
 
-    private List<Reward> getUnlocked(String userId) {
-        return getXRewards(userId, userIdToUnlockedRewardMapping);
-    }
-
-    private List<Reward> getXRewards(String userId, Map<String, List<Reward>> userIdToUnlockedRewardMapping) {
-        List<Reward> locked = userIdToUnlockedRewardMapping.get(userId);
-        if (Objects.isNull(locked) || 0 == locked.size()) {
-            return emptyList;
+    private List<Reward> getRewards(int score) {
+        List<Reward> response = new ArrayList<>();
+        for(int i=0; i<rewardMapping.size(); i++) {
+            if (rewardMapping.get(i).score < score) {
+                response.add(rewardMapping.get(i));
+            }
         }
-        return locked;
+        return response;
     }
 
 }

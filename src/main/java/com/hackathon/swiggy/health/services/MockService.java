@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URL;
 
 import com.hackathon.swiggy.health.vo.Recommendation;
+import com.hackathon.swiggy.health.vo.Rewards;
 import com.hackathon.swiggy.health.vo.TimeSeries;
 import com.fasterxml.jackson.databind.*;
 import org.springframework.stereotype.Service;
@@ -28,6 +29,12 @@ public class MockService {
         File file = getFileFromResources("swiggy-recommendation");
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.readValue(file, Recommendation.class);
+    }
+
+    public Rewards getRewards() throws IOException {
+        File file = getFileFromResources("rewards");
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper.readValue(file, Rewards.class);
     }
 
     private File getFileFromResources(String name)  {
