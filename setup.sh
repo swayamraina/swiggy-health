@@ -5,3 +5,6 @@ curl -X POST localhost:8080/api/user/create -H 'Content-Type: application/json' 
 
 # create recommendation
 curl -X GET localhost:8080/api/recommendation/create
+
+# create rewards
+curl -X GET localhost:8080/api/rewards/create

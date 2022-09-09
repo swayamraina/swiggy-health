@@ -1,0 +1,24 @@
+{
+    "rewards": [
+        {
+            "name": "Rs 50 Swiggy Money",
+            "score": 100
+        },
+        {
+            "name": "200 gm Apple",
+            "score": 200
+        },
+        {
+            "name": "Cranberry Almond Energy Bar",
+            "score": 300
+        },
+        {
+            "name": "Rs 100 Swiggy Money",
+            "score": 400
+        },
+        {
+            "name": "Rs 150 Guilt free order",
+            "score": 500
+        }
+    ]
+}
