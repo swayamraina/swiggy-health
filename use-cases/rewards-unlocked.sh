@@ -1,16 +1,36 @@
 #!/usr/bin/env bash
 
-# current user score
+echo "current user score"
 curl -X GET localhost:8080/api/user/1 2>/dev/null | python3 -m json.tool
 
-# no rewards
+sleep 5
+
+echo ""
+echo ""
+
+echo "currently no rewards are unlocked"
 curl -X GET localhost:8080/api/rewards/1 2>/dev/null | python3 -m json.tool
 
-# walks some distance
+sleep 5
+
+echo ""
+echo ""
+
+echo "user walks some distance"
 curl -X POST localhost:8080/api/1/timeseries -H 'Content-Type: application/json' -d '{ "date": "2022-09-09", "steps": 20000}' 2>/dev/null | python3 -m json.tool
 
-# updated user score
+sleep 5
+
+echo ""
+echo ""
+
+echo "updated user score"
 curl -X GET localhost:8080/api/user/1 2>/dev/null | python3 -m json.tool
 
-# some rewards
+sleep 5
+
+echo ""
+echo ""
+
+echo "user is shown some rewards"
 curl -X GET localhost:8080/api/rewards/1 2>/dev/null | python3 -m json.tool
