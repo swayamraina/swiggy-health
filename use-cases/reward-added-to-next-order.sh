@@ -6,7 +6,7 @@ order="$(curl -X POST localhost:8080/api/user/1/order/next -H 'Content-Type: app
 echo "$order created"
 
 # confirm order is not in system
-curl -X GET localhost:8080/api/user/1/order/$order
+curl -X GET localhost:8080/api/user/1/order/$order 2>/dev/null | python3 -m json.tool
 
 # create new order
 # new order has reward item
@@ -15,4 +15,4 @@ new_order="$(curl -X POST localhost:8080/api/user/1/order -H 'Content-Type: appl
 echo "$new_order created"
 
 # new order has reward item
-curl -X GET localhost:8080/api/user/1/order/$new_order
+curl -X GET localhost:8080/api/user/1/order/$new_order 2>/dev/null | python3 -m json.tool
